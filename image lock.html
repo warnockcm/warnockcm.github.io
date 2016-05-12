@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    p{
+        color:white;
+    }
+    </style>
+    </head>
+<body>
+
+<h1>Image Lock</h1>
+
+<div style="text-align: center; background-color: black;">
+    <br>
+    <img id="myImage" onclick="unlock(1)" src="http://g-ecx.images-amazon.com/images/G/01/img15/pet-products/small-tiles/23695_pets_vertical_store_dogs_small_tile_8._CB312176604_.jpg" height="200px" width="300px">
+    <img id="image" onclick="unlock(2)" src="http://animalpetdoctor.homestead.com/acat1.jpg" height="200px" width="200px">
+    <img id="img" onclick="unlock(3)" src="http://previews.123rf.com/images/tsekhmister/tsekhmister1207/tsekhmister120700801/14498924-Pig-who-is-represented-on-a-white-background--Stock-Photo-piglet.jpg" height="200px" width="200px">
+    <br>
+    <button onclick="tryAgain();">Try Again</button>
+    <p id ="pass">Before JavaScript alters this</p>
+    <br>
+</div>
+<br>
+
+<div id= "congrats">
+    </div>
+    
+    <script>
+    var pass1 = random(1,4);
+    var pass2 = random(1,4);
+    var pass3 = random(1,4);
+    var pass4 = random(1,4);
+    var pass5 = random(1,4);
+    var pass6 = random(1,4);
+    var total = pass1+""+pass2+""+pass3+""+pass4+""+pass5+""+pass6;
+    var userInput = "";
+
+    //Prints code that you need to click
+    function createCode(){
+        document.getElementById("pass").innerHTML = pass1+ "," +pass2+ "," +pass3+ "," +pass4+ "," +pass5+ "," +pass6;
+    }
+
+    createCode();
+    //Generates a passcode
+
+    function tryAgain(){
+        pass1 = random(1,4);
+        pass2 = random(1,4);
+        pass3 = random(1,4);
+        pass4 = random(1,4);
+        pass5 = random(1,4);
+        pass6 = random(1,4);
+        total = pass1+""+pass2+""+pass3+""+pass4+""+pass5+""+pass6;
+
+    createCode();
+    userInput ="";
+    document.getElementById("congrats").innerHTML = "";
+}
+        //For getting random numbers
+        function random(min, max){
+            return parseInt(Math.random() * (max-min) + min);
+        }
+
+        function unlock(x){
+            userInput+=x;
+        document.getElementById("congrats").innerHTML = userInput;
+
+        if (userInput == total){
+            document.getElementById("congrats").innerHTML = "Congratulations!";
+    }
+}
+    </script>
+</script>
+
+</body>
+</html>
