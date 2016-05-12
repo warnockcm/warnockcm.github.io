@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-image: url("http://www.netanimations.net/water_waves_ocean_ripple_high_quality_animated_gif.gif");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            background-size:cover;
+        }
+        .one{
+            background-color: #00CCFF;
+
+        }
+        img{
+            height: 100px;
+        }
+    </style>
+    </head>
+<body>
+
+<!-- This states what the images vales are worth -->
+<div style="text-align: center;">
+
+    <h1 style="font-size: 300%; color: #FFCC00">Go Fish </h1>
+    <a style="font-size: 150%; color: #FFCC00">How Many Fish ? </a>
+
+    <input id="fishNum" onchange="fishy(this.value)" type="number">
+    <br>
+
+<div class="one">
+    <hr><br>
+    <img id="myImage" src="http://cliparts.co/cliparts/pT7/K8A/pT7K8AXec.png" height="200px" width="200px">
+    <a>I'm worth 1</a>
+    <img id="image" src="http://cliparts.co/cliparts/5cR/94B/5cR94BEca.png" height="200px" width="200px">
+    <a>I'm worth 5</a>
+    <img id="img" src="http://www.clker.com/cliparts/j/1/l/R/H/r/fish-outline-red-hi.png" height="200px" width="150px">
+    <a>I'm worth 10</a>
+     <img id="img" src="https://upload.wikimedia.org/wikipedia/en/7/7e/Patrick_Star.png" height="300px" width="100px">
+     <a>I'm worth 100</a>
+     <hr>
+</div>
+
+<div id="fish">
+    </div>
+</div>
+<br>
+
+    <script>
+        function fishy(x){
+            document.getElementById("fish").innerHTML = "";
+            //100\
+        while(x>=100){
+            document.getElementById("fish").innerHTML += " <img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Patrick_Star.png'/>";
+            x=x-100;
+            if(x<100){
+                break;
+            }
+        }
+        while(x>=10){
+            document.getElementById("fish").innerHTML += " <img src='http://www.clker.com/cliparts/j/1/l/R/H/r/fish-outline-red-hi.png'/>";
+            x=x-10;
+            if(x<10){
+                break;
+            }
+        }
+        while(x>=5){
+            document.getElementById("fish").innerHTML += " <img src='http://cliparts.co/cliparts/5cR/94B/5cR94BEca.png'/>";
+            x=x-5;
+            if(x<5){
+                break;
+            }
+        }
+        while(x>=1){
+            document.getElementById("fish").innerHTML += " <img src='http://cliparts.co/cliparts/pT7/K8A/pT7K8AXec.png'/>";
+            x=x-1;
+            if(x<1){
+                break;
+            }
+        }
+    }
+    </script>
+</script>
+
+</body>
+</html>
