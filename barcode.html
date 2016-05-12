@@ -1,0 +1,55 @@
+​<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			a{
+				font-size: 150%;
+			}
+			canvas{
+				border-style: solid;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Arrays</h1>
+		<hr>
+		<br>
+		<canvas onclick="printBars();" id="myCanvas" height="100px" width="500px"></canvas>
+		<a id="answer"></a>
+	<script>
+		var arr = [];
+		var c = document.getElementById("myCanvas");
+		
+		//For getting a random number
+		function random(min,max){
+			return parseInt(Math.random() * (max-min) + min);
+		}
+		
+		//This funciton is responsible for printing vertical lines
+		function printBars(){
+			clearCanvas();
+			arr = [];
+			for(var i=0; i<c.width; i++){
+				arr.push(random(0,2));  
+			
+				//Prints out a vericle line incrementally randomly
+				if(arr[i]==1){
+					var ctx=c.getContext("2d");
+					ctx.beginPath();
+					ctx.moveTo(i,0);    //x1,y1
+					ctx.lineTo(i,100);    //x2,y2
+					ctx.stroke();
+				}
+			}
+			function clearCanvas(){
+				var ctx=c.getContext("2d")
+				ctx.rect(0,0,c.width,c.height);
+				ctx.fillStyle="white";
+				ctx.stroke();
+				ctx.fill();
+			}
+		}
+	</script>
+	</body>
+</html>
