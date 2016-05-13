@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<br>
+	<canvas id="myCanvas" width="500" height="500" ></canvas>
+	<script>
+		var c = document.getElementById("myCanvas");
+		var rectangleBlue = c.getContext("2d");
+		rectangleBlue.fillStyle="blue";
+		rectangleBlue.fillRect(0,0,c.width/3,c.height);
+
+		var c = document.getElementById("myCanvas");
+		var rectangleWhite = c.getContext("2d");
+		rectangleWhite.fillStyle="white";
+		rectangleWhite.fillRect(c.width/3,0,c.width/3,c.height);
+
+		var c = document.getElementById("myCanvas");
+		var rectangleRed = c.getContext("2d");
+		rectangleRed.fillStyle="red";
+		rectangleRed.fillRect((2 * c.width)/3,0,c.width/3,c.height);
+	</script>
+</body>
+</html>
