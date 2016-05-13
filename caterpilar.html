@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<canvas id="myCanvas" width="800" height="300"></canvas>
+	<a id="numCircles"></a>
+	<br>
+<script>
+	
+	var cir = prompt("How many circles?");
+	var c=document.getElementById("myCanvas");
+	var radius = 50;
+
+for(var i=0; i<cir; i++){
+	var circle = c.getContext("2d");
+	circle.beginPath();
+	circle.arc(radius + 2*radius*i,75, radius,0, 2 * Math.PI); //x1,x2, radius, 0, 360
+	circle.stroke();
+	
+	if(i%2==0){
+		circle.fillStyle = "red";
+	}
+	else{
+		circle.fillStyle = "green";
+	}
+
+	circle.fill();
+	
+	if((radius + 2*radius*i) >= c.width) {
+		break;
+	}
+}
+
+document.getElementById("numCircles").innerHTML = i;
+
+</script> 
+
+</body>
+</html>
